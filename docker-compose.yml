@@ -1,3 +1,5 @@
+version: "3.9"
+
 services:
   pingora:
     build:
@@ -8,6 +10,5 @@ services:
     ports:
       - "8180:80"
     volumes:
-      - ./pingora.toml:/etc/pingora.toml
-    command: >
-      /app/pingora -c /etc/pingora.toml
+      - ./pingora.toml:/etc/pingora.toml:ro
+    command: ["/app/pingora", "-c", "/etc/pingora.toml"]
