@@ -8,4 +8,6 @@ services:
     ports:
       - "8180:80"
     volumes:
-      - ./pingora:/etc/pingora
+      - ./pingora.toml:/etc/pingora.toml
+    command: >
+      /app/pingora -c /etc/pingora.toml
