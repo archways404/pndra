@@ -1,0 +1,11 @@
+services:
+  pingora:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: pingora
+    restart: unless-stopped
+    ports:
+      - "8180:80"
+    volumes:
+      - ./pingora:/etc/pingora
